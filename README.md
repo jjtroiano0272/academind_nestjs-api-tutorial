@@ -93,3 +93,7 @@ What's the structure? Every component gets a controller, service, and module?
 What the fuck really is a DTO?
 @IsOptional() is for the class validation to know
 variable?: type is for TypeScript to know
+
+
+- Monorepo
+- 
