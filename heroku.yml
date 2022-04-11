@@ -22,3 +22,6 @@ services:
       - freecodecamp
 networks:
   freecodecamp:
+
+
+postgres://vdukwgflajhzmb:71f7a37dfb377e384bc8cc70f99487ec8d76be230df2a2fdd059d4581885b77f@ec2-34-207-12-160.compute-1.amazonaws.com:5432/d6p452vo0mlnjn
