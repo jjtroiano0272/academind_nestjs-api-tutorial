@@ -94,6 +94,13 @@ What the fuck really is a DTO?
 @IsOptional() is for the class validation to know
 variable?: type is for TypeScript to know
 
-
 - Monorepo
-- 
+-
+
+## Troubleshooting
+
+- [x] Q: host database docker
+- [ ] Q: docker-compose hosting
+- [ ] Y: hosting with docker
+- [ ] https://www.prisma.io/dataguide/postgresql/5-ways-to-host-postgresql
+- [ ] https://devcenter.heroku.com/articles/build-docker-images-heroku-yml
