@@ -1,5 +1,9 @@
 import { User } from '@prisma/client';
+import { EditUserDto } from './dto/edit-user.dto';
+import { UserService } from './user.service';
 export declare class UserController {
+    private userService;
+    constructor(userService: UserService);
     getMe(user: User): User;
-    editUser(): void;
+    editUser(userId: number, dto: EditUserDto): Promise<User>;
 }

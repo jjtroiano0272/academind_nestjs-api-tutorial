@@ -15,12 +15,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const get_user_decorator_1 = require("../auth/decorator/get-user.decorator");
-const guard_1 = require("../auth/guard");
+const jwt_guard_1 = require("../auth/guard/jwt.guard");
+const edit_user_dto_1 = require("./dto/edit-user.dto");
+const user_service_1 = require("./user.service");
 let UserController = class UserController {
+    constructor(userService) {
+        this.userService = userService;
+    }
     getMe(user) {
         return user;
     }
-    editUser() {
+    editUser(userId, dto) {
+        return this.userService.editUser(userId, dto);
     }
 };
 __decorate([
@@ -32,13 +38,16 @@ __decorate([
 ], UserController.prototype, "getMe", null);
 __decorate([
     (0, common_1.Patch)(),
+    __param(0, (0, get_user_decorator_1.GetUser)('id')),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Number, edit_user_dto_1.EditUserDto]),
     __metadata("design:returntype", void 0)
 ], UserController.prototype, "editUser", null);
 UserController = __decorate([
-    (0, common_1.UseGuards)(guard_1.JwtGuard),
-    (0, common_1.Controller)('users')
+    (0, common_1.UseGuards)(jwt_guard_1.JwtGuard),
+    (0, common_1.Controller)('users'),
+    __metadata("design:paramtypes", [user_service_1.UserService])
 ], UserController);
 exports.UserController = UserController;
 //# sourceMappingURL=user.controller.js.map

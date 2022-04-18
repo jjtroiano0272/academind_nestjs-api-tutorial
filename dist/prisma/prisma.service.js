@@ -23,6 +23,12 @@ let PrismaService = class PrismaService extends client_1.PrismaClient {
             }
         });
     }
+    cleanDb() {
+        return this.$transaction([
+            this.bookmark.deleteMany(),
+            this.user.deleteMany(),
+        ]);
+    }
 };
 PrismaService = __decorate([
     (0, common_1.Injectable)(),

@@ -89,6 +89,21 @@ Nest is [MIT licensed](LICENSE).
 - 02:50:00 error troubleshooting
 - 03:12:00 Checking if body contains certain fields
 
+- 27:00
+- 36:30
+- 41:00
+- 45:00 best practices
+- 53:00 security
+
+//
+https://www.youtube.com/watch?v=ulfU5vY6I78
+
+- 05:00
+- 19:00 creating data...from localhost???
+- 28:00 returning _id as id
+- 45:00
+
+
 What's the structure? Every component gets a controller, service, and module?
 What the fuck really is a DTO?
 @IsOptional() is for the class validation to know
