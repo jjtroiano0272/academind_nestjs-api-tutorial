@@ -9,7 +9,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductsModule } from './products/products.module';
 
-require('dotenv').config();
+// require('dotenv').config();
+const dotenv = require("dotenv");
 @Module({
   imports: [
     // Imports previously used for bookmarks/users API
@@ -22,8 +23,7 @@ require('dotenv').config();
     // PrismaModule,
     ProductsModule,
     // TODO: how to read these from env file
-    // MongooseModule.forRoot('mongodb+srv://jjtroiano0272:oWfoJ1R7dCGpz04C@cluster0.pkm8b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')
-    MongooseModule.forRoot(`${process.env.DB_HOST}${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pkm8b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`)
+    MongooseModule.forRoot(process.env.DB_URI)
   ],
   controllers: [AppController],
   providers: [AppService],
